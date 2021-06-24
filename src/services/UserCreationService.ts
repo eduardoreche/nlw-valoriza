@@ -10,7 +10,7 @@ interface IUserCreationRequest {
 }
 
 class UserCreationService {
-  async execute({ name, email, password, admin }: IUserCreationRequest) {
+  async execute({ name, email, password, admin = false }: IUserCreationRequest) {
     const usersRepository = getCustomRepository(UsersRepositories);
 
     if (!email) throw new Error('Email is invalid');
