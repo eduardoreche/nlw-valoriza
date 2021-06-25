@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import 'express-async-errors';
 
 import 'reflect-metadata';
@@ -7,6 +8,12 @@ import './database';
 import router from './routes';
 
 const app = express();
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
 
 app.use(express.json());
 
