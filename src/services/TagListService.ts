@@ -1,3 +1,4 @@
+import { classToPlain } from 'class-transformer';
 import { getCustomRepository } from 'typeorm';
 import TagsRepositories from '../repositories/TagsRepositories';
 
@@ -5,9 +6,9 @@ class TagListService {
   async execute() {
     const repository = getCustomRepository(TagsRepositories);
 
-    const tags = repository.find();
+    const tags = await repository.find();
 
-    return tags;
+    return classToPlain(tags);
   }
 }
 
