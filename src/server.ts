@@ -33,4 +33,5 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 
 app.listen(3000, () => {
   console.log('server is running');
+  console.log(process.env);
 });

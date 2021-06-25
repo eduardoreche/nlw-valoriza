@@ -22,7 +22,7 @@ class UserAuthenticationService {
         name: user.name,
         email: user.email,
       },
-      '2919dd27d0b4ce20e92b47bedd33cc8d',
+      process.env.JWT_SECRET,
       {
         subject: user.id,
         expiresIn: '1h',

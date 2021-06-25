@@ -9,7 +9,7 @@ const ensureAuthentication = (request: Request, response: Response, next: NextFu
   const [, token] = authorizationHeader.split(' ');
 
   try {
-    const { sub } = verify(token, '2919dd27d0b4ce20e92b47bedd33cc8d');
+    const { sub } = verify(token, process.env.JWT_SECRET);
 
     request.user_id = sub as string;
 
