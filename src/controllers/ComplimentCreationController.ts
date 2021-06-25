@@ -4,7 +4,7 @@ import ComplimentCreationService from '../services/ComplimentCreationService';
 
 class ComplimentCreationController {
   async handle(request: Request, response: Response) {
-    const user_sender = 'c8269886-c75f-4854-8ffd-9b4bb8f92823'; //TODO: get from authenticated user
+    const { user_id: user_sender } = request;
 
     const { user_receiver, tag_id, message } = request.body;
 
